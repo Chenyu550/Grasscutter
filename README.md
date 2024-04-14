@@ -3,98 +3,74 @@
 
 <div align="center"><a href="https://discord.gg/T5vZU6UyeG"><img alt="Discord - Grasscutter" src="https://img.shields.io/discord/965284035985305680?label=Discord&logo=discord&style=for-the-badge"></a></div>
 
-[EN](README.md) | [简中](docs/README_zh-CN.md) | [繁中](docs/README_zh-TW.md) | [FR](docs/README_fr-FR.md) | [ES](docs/README_es-ES.md) | [HE](docs/README_HE.md) | [RU](docs/README_ru-RU.md) | [PL](docs/README_pl-PL.md) | [ID](docs/README_id-ID.md) | [KR](docs/README_ko-KR.md) | [FIL/PH](docs/README_fil-PH.md) | [NL](docs/README_NL.md) | [JP](docs/README_ja-JP.md) | [IT](docs/README_it-IT.md) | [VI](docs/README_vi-VN.md)
+[EN](../README.md) | [简中](README_zh-CN.md) | [繁中](README_zh-TW.md) | [FR](README_fr-FR.md) | [ES](README_es-ES.md) | [HE](README_HE.md) | [RU](README_ru-RU.md) | [PL](README_pl-PL.md) | [ID](README_id-ID.md) | [KR](README_ko-KR.md) | [FIL/PH](README_fil-PH.md) | [NL](README_NL.md) | [JP](README_ja-JP.md) | [IT](README_it-IT.md) | [VI](README_vi-VN.md) | [हिंदी](README_hn-IN.md)
 
-**Attention:** We always welcome contributors to the project. Before adding your contribution, please carefully read our [Code of Conduct](https://github.com/Grasscutters/Grasscutter/blob/stable/CONTRIBUTING.md).
+**注意:** 我们始终欢迎项目的贡献者。但在做贡献之前，请仔细阅读我们的[代码规范](https://github.com/Grasscutters/Grasscutter/blob/stable/CONTRIBUTING.md)。
 
-## Current features
+## 当前功能
 
-* Logging in
-* Combat
-* Friends list
-* Teleportation
-* Gacha system
-* Co-op *partially* works
-* Spawning monsters via console
-* Inventory features (receiving items/characters, upgrading items/characters, etc)
+* 登录
+* 战斗
+* 好友
+* 传送
+* 祈愿
+* 多人游戏 *部分* 可用
+* 从控制台生成魔物
+* 背包功能（接收或升级物品、角色等）。
+ 
+## 快速安装指南
 
-## Quick setup guide
+**注意:** 如需帮助，请加入我们的[Discord](https://discord.gg/T5vZU6UyeG)。
 
-**Note**: For support please join our [Discord](https://discord.gg/T5vZU6UyeG).
+### 快速开始（全自动）
 
-### Quick Start (automatic)
+- 获取Java 17：https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html
+- 获取[MongoDB社区版](https://www.mongodb.com/try/download/community)
+- 获取游戏4.0正式版 (如果你没有4.0的客户端，可以在这里找到）：
+[123盘 分享](https://www.123pan.com/s/HoqUVv-U7SBA.html)
+[github](https://github.com/JRSKelvin/GenshinRepository/blob/main/Version%204.0.0.md)
 
-- Get [Java 17](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)
-- Get [MongoDB Community Server](https://www.mongodb.com/try/download/community)
-- Get game version REL4.0.x (If you don't have a 4.0.x client, you can find it here and open any of the links to download it):
-[4.0.x Client-github](https://github.com/JRSKelvin/GenshinRepository/blob/main/Version%204.0.0.md)
-[4.0.x Client-cloud drive](https://www.123pan.com/s/HoqUVv-U7SBA.html)
+- 下载[最新的Cultivation版本](https://github.com/Grasscutters/Cultivation/releases/latest)（使用以“.msi”为后缀的安装包）。
+- 以管理员身份打开Cultivation，按右上角的下载按钮。
+- 点击“下载 Grasscutter 一体化”
+- 点击右上角的齿轮
+- 将游戏安装路径设置为你游戏所在的位置。
+- 设置自定义Java路径设置
+- 保持所有其它设置为默认值
 
-- Download the [latest Cultivation version](https://github.com/Grasscutters/Cultivation/releases/latest). Use the `.msi` installer.
-- After opening Cultivation (as admin), press the download button in the upper right corner. 
-- Click `Download All-in-One`
-- Click the gear in the upper right corner
-- Set the game Install path to where your game is located.
-- Set the Custom Java Path to `C:\Program Files\Java\jdk-17\bin\java.exe`
-- Leave all other settings on default
+- 点击“启动”按钮旁边的小按钮。
+- 点击“启动”按钮。
+- 随便想一个用户名登录，不需要密码。
 
-- Click the small button next to launch.
-- Click the launch button.
-- Log in with whatever username you want. Password can be anything.
+### 构建
 
-### Building
+Grasscutter使用Gradle来处理依赖和构建。
 
-Grasscutter uses Gradle to handle dependencies & building.
+**前置：**
 
-**Requirements:**
-
-- [Java Development Kit 17](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html) or higher
+- [Java SE Development Kits - 17](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)或更高版本
 - [Git](https://git-scm.com/downloads)
-- [NodeJS](https://nodejs.org/en/download) (Optional, for building the handbook)
 
-##### Clone
+##### Windows
 
 ```shell
 git clone --recurse-submodules https://github.com/Grasscutters/Grasscutter.git
 cd Grasscutter
+.\gradlew.bat # 设置开发环境
+.\gradlew jar # 编译
 ```
 
-##### Compile
-
-**Note**: Handbook generation may fail on some systems. To disable the handbook generation, append `-PskipHandbook=1` to the `gradlew jar` command.
-
-Windows:
-
-```shell
-.\gradlew.bat # Setting up environments
-.\gradlew jar
-```
-
-Linux (GNU):
+##### Linux（GNU）
 
 ```bash
+git clone --recurse-submodules https://github.com/Grasscutters/Grasscutter.git
+cd Grasscutter
 chmod +x gradlew
-./gradlew jar
+./gradlew jar # 编译
 ```
 
-##### Compiling the Handbook (Manually)
+你可以在项目的根目录找到输出的jar。
 
-With Gradle:
+### 故障排除
 
-```shell
-./gradlew generateHandbook
-```
-
-With NPM:
-
-```shell
-cd src/handbook
-npm install
-npm run build
-```
-
-You can find the output jar in the root of the project folder.
-
-### Troubleshooting 
-
-For a list of common issues and solutions and to ask for help, please join [our Discord server](https://discord.gg/T5vZU6UyeG) and go to the support channel.
+获取常见问题的解决方案或寻求帮助，请加入[我们的Discord服务器](https://discord.gg/T5vZU6UyeG)并进入“support”频道。
